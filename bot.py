@@ -75,6 +75,8 @@ def send_telegram(text):
     return r.json()
 
 if __name__ == "__main__":
+    print("TOKEN:", TELEGRAM_TOKEN)
+    print("CHAT_ID:", TELEGRAM_CHAT_ID)
     partite = get_matches()
     msg = build_message(partite)
     print(msg)  # debug console

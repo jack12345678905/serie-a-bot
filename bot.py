@@ -7,8 +7,9 @@ import os
 
 # === CONFIG ===
 URL = "https://www.legaseriea.it/it/serie-a/calendario-e-risultati"
-TELEGRAM_TOKEN = "8073099493:AAGtjmpjExCpRWXlrJiKeohtldZocPipGS8"
-TELEGRAM_CHAT_ID = "-4679117538"
+
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def get_matches():
     try:

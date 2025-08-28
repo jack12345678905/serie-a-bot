@@ -8,10 +8,10 @@ import os
 # === CONFIG ===
 URL = "https://www.legaseriea.it/it/serie-a/calendario-e-risultati"
 
-#TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
-#TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
-TELEGRAM_TOKEN = "8073099493:AAGtjmpjExCpRWXlrJiKeohtldZocPipGS8"
-TELEGRAM_CHAT_ID = "-4679117538"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+#TELEGRAM_TOKEN = "8073099493:AAGtjmpjExCpRWXlrJiKeohtldZocPipGS8"
+#TELEGRAM_CHAT_ID = "-4679117538"
 def get_matches():
     try:
         # Prima prova con certificati ufficiali

@@ -31,8 +31,8 @@ def get_upcoming_matches(season: int):
     for m in data.get("matches", []):
         if m["status"] != "TIMED":  # solo partite future
             continue
-        home = m["homeTeam"]["name"]
-        away = m["awayTeam"]["name"]
+        home = m["homeTeam"]["shortName"]
+        away = m["awayTeam"]["shortName"]
         dt_utc = datetime.fromisoformat(m["utcDate"].replace("Z", "+00:00"))
         dt_local = dt_utc.astimezone(ROME_TZ)
         formatted = format_datetime(dt_local, "EEEE dd/MM/yyyy", locale='it')

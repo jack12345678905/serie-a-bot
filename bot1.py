@@ -3,10 +3,10 @@ from datetime import datetime
 import pytz
 import certifi
 
-API_KEY = "b9f6ee5f94374112b9db3319f129a49f"
+API_KEY = os.environ.get("API_KEY")
 BASE_URL = "https://api.football-data.org/v4/competitions/SA/matches"
-TELEGRAM_TOKEN = "8073099493:AAGtjmpjExCpRWXlrJiKeohtldZocPipGS8"
-TELEGRAM_CHAT_ID = "-1003068867218"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 ROME_TZ = pytz.timezone("Europe/Rome")
 

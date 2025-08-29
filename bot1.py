@@ -27,7 +27,7 @@ def get_upcoming_matches(season: int):
 
     matches = []
     for m in data.get("matches", []):
-        if m["status"] != "SCHEDULED":  # solo partite future
+        if m["status"] != "TIMED":  # solo partite future
             continue
         home = m["homeTeam"]["name"]
         away = m["awayTeam"]["name"]

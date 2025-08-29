@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 import pytz
+import certifi
 
 API_KEY = "b9f6ee5f94374112b9db3319f129a49f"
 BASE_URL = "https://api.football-data.org/v4/competitions/SA/matches"

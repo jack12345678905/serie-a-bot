@@ -3,6 +3,7 @@ from datetime import datetime
 import pytz
 import certifi
 import os
+from googletrans import Translator
 
 API_KEY = os.environ.get("API_KEY")
 BASE_URL = "https://api.football-data.org/v4/competitions/SA/matches"
@@ -49,7 +50,7 @@ def build_message(partite, stagione):
         return "⚽ Nessuna partita futura trovata."
     lines = [f"📅 Prossime partite Serie A {stagione}/{stagione+1}:"]
     for m in partite[:10]:
-        lines.append(f"{m['date']} {m['time']} — {m['home']} vs {m['away']}")
+        lines.append(f"{translator.translate(m['date'], src='en', dest='it')} {m['time']} — {m['home']} vs {m['away']}")
     return "\n".join(lines)
 
 def send_telegram(text):

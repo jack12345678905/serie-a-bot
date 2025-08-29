@@ -3,7 +3,7 @@ from datetime import datetime
 import pytz
 import certifi
 import os
-from googletrans import Translator
+from babel.dates import format_datetime
 
 API_KEY = os.environ.get("API_KEY")
 BASE_URL = "https://api.football-data.org/v4/competitions/SA/matches"
@@ -35,9 +35,10 @@ def get_upcoming_matches(season: int):
         away = m["awayTeam"]["name"]
         dt_utc = datetime.fromisoformat(m["utcDate"].replace("Z", "+00:00"))
         dt_local = dt_utc.astimezone(ROME_TZ)
+        formatted = format_datetime(dt_local, "EEEE dd/MM/yyyy", locale='it')
 
         matches.append({
-            "date": dt_local.strftime("%A %d/%m/%Y"),
+            "date": formatted,                                         #dt_local.strftime("%A %d/%m/%Y")
             "time": dt_local.strftime("%H:%M"),
             "home": home,
             "away": away

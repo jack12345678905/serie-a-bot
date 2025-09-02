@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pytz certifi Babel
+          pip install requests beautifulsoup4 pytz certifi Babel timedelta
 
       - name: Run bot script
         env:

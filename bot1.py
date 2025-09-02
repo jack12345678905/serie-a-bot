@@ -48,7 +48,7 @@ def get_upcoming_matches(season: int):
 
 def build_message(partite, stagione):
     dt_now = datetime.now()
-    delta =  timedelta(days = 11)
+    delta =  timedelta(days = 2)
     f_date = dt_now + delta
     formatted_now = format_datetime(f_date, "EEEE dd/MM/yyyy", locale='it')
     if partite and partite[1]['date'] == formatted_now :

@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 import certifi
 import os
@@ -47,12 +47,16 @@ def get_upcoming_matches(season: int):
     return matches
 
 def build_message(partite, stagione):
-    if not partite:
-        return "⚽ Nessuna partita futura trovata."
-    lines = [f"📅 Prossime partite Serie A {stagione}/{stagione+1}:"]
-    for m in partite[:10]:
-        lines.append(f"{m['date']} {m['time']} — {m['home']} vs {m['away']}")
-    return "\n".join(lines)
+    dt_now = datetime.now()
+    delta =  timedelta(days = 2)
+    f_date = dt_now + delta
+    formatted_now = format_datetime(f_date, "EEEE dd/MM/yyyy", locale='it')
+    if partite and partite[1]['date'] == formatted_now :
+        lines = [f"⚽ RICORCADI LA FORMAZION \n 📅 Prossime partite Serie A {stagione}/{stagione+1}: \n"]
+        for m in partite[:10]:
+            lines.append(f"{m['date']} {m['time']} — {m['home']} vs {m['away']}")
+        return "\n".join(lines)
+    return "⚽ Nessuna partita futura trovata."
 
 def send_telegram(text):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"

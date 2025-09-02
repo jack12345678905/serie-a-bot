@@ -52,7 +52,7 @@ def build_message(partite, stagione):
     f_date = dt_now + delta
     formatted_now = format_datetime(f_date, "EEEE dd/MM/yyyy", locale='it')
     if partite and partite[1]['date'] == formatted_now :
-        lines = [f" RICORDATI LA FORMAZIONE 📅 Prossime partite Serie A {stagione}/{stagione+1}: \n"]
+        lines = [f" RICORDATI LA FORMAZIONE\n\n 📅 Prossime partite Serie A {stagione}/{stagione+1}: \n"]
         for m in partite[:10]:
             lines.append(f"{m['date']} {m['time']} — {m['home']} vs {m['away']}")
         return "\n".join(lines)

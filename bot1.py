@@ -56,7 +56,7 @@ def build_message(partite, stagione):
         for m in partite[:10]:
             lines.append(f"{m['date']} {m['time']} — {m['home']} vs {m['away']}")
         return "\n".join(lines)
-    return "⚽ Nessuna partita futura trovata."
+    #return "⚽ Nessuna partita futura trovata."
 
 def send_telegram(text):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"

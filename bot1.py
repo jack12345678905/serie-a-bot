@@ -4,7 +4,7 @@ import pytz
 import certifi
 import os
 from babel.dates import format_datetime
-
+#Sito api: https://www.football-data.org/client/login
 API_KEY = os.environ.get("API_KEY")
 BASE_URL = "https://api.football-data.org/v4/competitions/SA/matches"
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")

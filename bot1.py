@@ -66,7 +66,7 @@ def send_telegram(text):
     return r.json()
 
 if __name__ == "__main__":
-    stagione = 2025
+    stagione = 2026
     partite = get_upcoming_matches(stagione)
     msg = build_message(partite, stagione)
     print(msg)  # debug console

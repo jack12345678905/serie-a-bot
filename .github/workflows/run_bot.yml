@@ -33,3 +33,13 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           API_KEY: ${{ secrets.API_KEY }}
         run: python bot1.py
+
+        # --- TRUCCO ANTI-BLOCCO 60 GIORNI ---
+      - name: Mantieni vivo il repository
+        run: |
+          echo "Ultimo avvio automatico: $(date)" > keep_alive.txt
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add keep_alive.txt
+          git commit -m "Keep-alive automatico [Workflow Run]" || exit 0
+          git push

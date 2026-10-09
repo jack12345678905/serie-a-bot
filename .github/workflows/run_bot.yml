@@ -3,10 +3,10 @@ name: Run Python Telegram Bot
 on:
   schedule:
     # Esegui ogni giorno alle 10:00 UTC
-    - cron: '7 8 * * *'    # ~10:07 italiane
-    - cron: '12 11 * * *'  # ~13:12 italiane
-    - cron: '23 15 * * *'  # ~17:23 italiane
-    - cron: '18 17 * * *'  # ~19:18 italiane
+    - cron: '7 6 * * *'    # ~8:07 italiane
+    - cron: '12 9 * * *'  # ~11:12 italiane
+    - cron: '23 13 * * *'  # ~15:23 italiane
+    - cron: '18 15 * * *'  # ~17:18 italiane
   workflow_dispatch:  # permette anche di eseguire manualmente
 
 jobs:

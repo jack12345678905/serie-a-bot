@@ -69,8 +69,8 @@ if __name__ == "__main__":
     stagione = 2026
     partite = get_upcoming_matches(stagione)
     if msg:
-        build_message(partite, stagione)
-        print(msg)  # debug console
+        print("Criterio rispettato, invio messaggio su Telegram:")
+        print(msg)
         send_telegram(msg)
     else:
-        return None
+        print("Nessuna partita corrisponde ai criteri: nessun messaggio inviato.")

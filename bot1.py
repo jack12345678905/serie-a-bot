@@ -47,6 +47,8 @@ def get_upcoming_matches(season: int):
     return matches
 
 def build_message(partite, stagione):
+    if not partite:
+        return None
     dt_now = datetime.now()
     delta =  timedelta(days = 2)
     f_date = dt_now + delta

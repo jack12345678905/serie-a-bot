@@ -70,6 +70,7 @@ def send_telegram(text):
 if __name__ == "__main__":
     stagione = 2026
     partite = get_upcoming_matches(stagione)
+    msg = build_message(partite, stagione)
     if msg:
         print("Criterio rispettato, invio messaggio su Telegram:")
         print(msg)
